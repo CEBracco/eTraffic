@@ -23,12 +23,12 @@ class Interseccion
     private $id;
 
     /**
-     * @ORM\OneToMany(targetEntity="Semaforo", mappedBy="interseccion")
+     * @ORM\OneToMany(targetEntity="Semaforo", mappedBy="interseccion",cascade={"persist", "remove"})
      */
     private $semaforos;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Calle", mappedBy="intersecciones")
+     * @ORM\ManyToMany(targetEntity="Calle", mappedBy="intersecciones",cascade={"persist", "remove"})
      */
     private $calles;
 
