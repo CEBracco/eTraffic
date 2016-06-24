@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/tables.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset('lib/DataTables/js/jquery.dataTables.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/tables.js') }}"></script>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+    <div class="card-panel">
+        <h1>Semáforos Registrados</h1>
+
+        <div class="row">
+            <div id="admin" class="col s12">
+                <div class="material-table">
+                    <div class="table-header">
+                        <span class="table-title">Datos</span>
+                        <div class="actions">
+                            <a href="javascript:void(0)" class="search-toggle waves-effect btn-flat nopadding"><i class="material-icons">search</i></a>
+                        </div>
+                    </div>
+                    <table id="datatable">
+                        <thead>
+                            <tr>
+                                <th>Calle</th>
+                                <td>URL</td>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for semaforo in semaforos %}
+                            <tr>
+                                <td>{{ semaforo.calle.nombre }}</td>
+                                <td><a href="{{ semaforo.url }}">{{ semaforo.url }}</a></td>
+                                <td>
+                                    <a href="{{ path('semaforo_graphic', { 'id': semaforo.id }) }}">Ver Estado</a>        
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+{% endblock %}
