@@ -10,4 +10,6 @@ namespace AppBundle\Repository;
  */
 class InterseccionRepository extends \Doctrine\ORM\EntityRepository
 {
+	
+ 
 }

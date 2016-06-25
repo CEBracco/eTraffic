@@ -10,4 +10,5 @@ namespace AppBundle\Repository;
  */
 class CalleRepository extends \Doctrine\ORM\EntityRepository
 {
+
 }
