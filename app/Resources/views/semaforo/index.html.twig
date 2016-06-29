@@ -12,7 +12,7 @@
 {% block body %}
     <div class="container">
     <div class="card-panel">
-        <h1>Semáforos Registrados</h1>
+        <h2>Semáforos Registrados</h2>
 
         <div class="row">
             <div id="admin" class="col s12">
@@ -37,7 +37,7 @@
                                 <td>{{ semaforo.calle.nombre }}</td>
                                 <td><a href="{{ semaforo.url }}">{{ semaforo.url }}</a></td>
                                 <td>
-                                    <a href="{{ path('semaforo_graphic', { 'id': semaforo.id }) }}">Ver Estado</a>        
+                                    <a href="{{ path('semaforo_graphic', { 'id': semaforo.id }) }}" class="waves-effect waves-light btn-flat"><i class="material-icons left">remove_red_eye</i>Ver Estado</a></a>        
                                 </td>
                             </tr>
                             {% endfor %}

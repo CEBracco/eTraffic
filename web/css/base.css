@@ -1,3 +1,18 @@
 body{
-    background-color:#f1f2f1;
+    /*background-color:#f1f2f1;*/
+    /*background: url("../img/back9.png");*/
+    background: url(../img/stripe_bg_black.gif) repeat-x;
+    background-size: auto 100%;
+}
+
+.nav-wrapper{
+	background-color: #333;
+}
+
+.nav-wrapper .brand-logo img {
+  height: 64px;
+}
+
+#sidenav-overlay{
+	z-index: 998;
 }

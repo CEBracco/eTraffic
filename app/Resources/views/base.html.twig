@@ -18,8 +18,65 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     </head>
+    
+    <header>
+        <div class="navbar-fixed">
+            <nav>
+                <div class="nav-wrapper">
+                    <a href="#!" class="brand-logo"><img class="responsive-img" src="{{ asset('img/logo.png') }}"></a>
+                    <a href="#" data-activates="mobile-sideNav" class="button-collapse"><i class="material-icons">menu</i></a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="{{ path('map_view') }}" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Mapa de Semáforos"><i class="material-icons">map</i></a></li>
+                        <li><a href="{{ path('semaforo_index') }}" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Semáforos Registrados"><i class="material-icons">traffic</i></a></li>
+                        <li><a href="#" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Calles más Transitadas"><i class="material-icons">format_list_bulleted</i></a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        
+        <ul class="side-nav" id="mobile-sideNav">
+            <li><a href="{{ path('map_view') }}"><i class="material-icons">map</i> Mapa de Semáforos</a></li>
+            <li><a href="{{ path('semaforo_index') }}"><i class="material-icons">traffic</i> Semáforos Registrados</a></li>
+            <li><a href="#"><i class="material-icons">format_list_bulleted</i> Calles más Transitadas</a></li>
+        </ul>
+
+    </header>
+
     <body>
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>
+
+{# <footer class="page-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text">Footer Content</h5>
+                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+        © 2016 Copyright Text
+        <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+        </div>
+    </div>
+</footer> #}
+
+
+    <script>
+        $(document).ready(function(){
+            $(".button-collapse").sideNav();
+        });
+    </script>
 </html>
