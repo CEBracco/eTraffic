@@ -10,28 +10,38 @@
 {% endblock %}
 
 {% block body %}
-    <h1>Calles más transitadas</h1>
+    <div class="container">
+    <div class="card-panel">
+        <h2>Calles mas transitadas</h2>
 
-    <div class="row">
-        <div id="admin" class="col s12">
-            <div class="material-table">
-                <table id="datatable">
-                    <thead>
-                        <tr>
-                            <th>Calle</th>
-                            <th>Promedio de autos</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for promedio in promedios %}
-                        <tr>
-                            <td>{{ promedio.callePrimaria }}</td>
-                            <td>{{ promedio.promedio }}</td>
-                        </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
+        <div class="row">
+            <div id="admin" class="col s12">
+                <div class="material-table">
+                    <div class="table-header">
+                        <span class="table-title">Datos</span>
+                        <div class="actions">
+                            <a href="javascript:void(0)" class="search-toggle waves-effect btn-flat nopadding"><i class="material-icons">search</i></a>
+                        </div>
+                    </div>
+                    <table id="datatable">
+                        <thead>
+                            <tr>
+                                <th>Calle</th>
+                                <td>Cantidad de autos</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for calle in calles %}
+                            <tr>
+                                <td>{{ calle.callePrimaria }}</td>
+                                <td>{{ calle.autosPorMinuto }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
+    </div>
     </div>
 {% endblock %}

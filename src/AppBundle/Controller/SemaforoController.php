@@ -188,11 +188,17 @@ class SemaforoController extends Controller
     public function callesTransitadasAction()
     {
         $em = $this->getDoctrine()->getManager();
-        $query = $em->createQuery("SELECT s.callePrimaria, AVG(s.autosPorMinuto) as promedio FROM AppBundle:Semaforo s group by s.callePrimaria order by promedio desc");
-        $promedios= $query->getResult();
+        $query = $em->createQuery("SELECT s from AppBundle:Semaforo s");
+        $semaforos= $query->getResult();
+        $calles=array();
+        foreach($semaforos as $semaforo){
+            $json=file_get_contents($semaforo->getUrl());
+            $sem=json_decode($json,true);
+            $calles[$sem['callePrimaria']]=$sem;
+        }
 
         return $this->render('semaforo/calles.html.twig', array(
-            'promedios' => $promedios
+            'calles' => $calles
         ));
     }
 }
