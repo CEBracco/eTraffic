@@ -182,9 +182,11 @@
 
 $(document).ready(function() {
   $('#datatable').dataTable({
+    "order": [order],
     "columnDefs": [
-      { "width": "10%", "targets": 0 },
-      { "width": "20%", "targets": 2 }
+      { "width": "10%", "targets": '10percent' },
+      { "width": "20%", "targets": '20percent' },
+      { "orderable": false, "targets"  : 'no-sort'},
     ],
     "oLanguage": {
       "sStripClasses": "",

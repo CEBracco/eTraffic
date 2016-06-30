@@ -6,6 +6,9 @@
 
 {% block javascripts %}
     <script type="text/javascript" src="{{ asset('lib/DataTables/js/jquery.dataTables.min.js') }}"></script>
+    <script type="text/javascript">
+        var order=[0,"asc"];
+    </script>
     <script type="text/javascript" src="{{ asset('js/tables.js') }}"></script>
 {% endblock %}
 
@@ -26,9 +29,9 @@
                     <table id="datatable">
                         <thead>
                             <tr>
-                                <th>Calle</th>
-                                <td>URL</td>
-                                <th>Acciones</th>
+                                <th class="10percent">Calle</th>
+                                <th>URL</th>
+                                <th class="20percent no-sort">Acciones</th>
                             </tr>
                         </thead>
                         <tbody>

@@ -48,8 +48,6 @@ class SemaforoController extends Controller
      public function showMapAction()
     {
        
-       // $url='http://maps.googleapis.com/maps/api/geocode/json?sensor=false&address='.urlencode('calle 1 y calle 50, La Plata');
-       
         return $this->render('semaforo/mapa.html.twig',array());
     }
 

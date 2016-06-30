@@ -23,12 +23,12 @@
         <div class="navbar-fixed">
             <nav>
                 <div class="nav-wrapper">
-                    <a href="#!" class="brand-logo"><img class="responsive-img" src="{{ asset('img/logo.png') }}"></a>
+                    <a href="{{ path('homepage') }}" class="brand-logo"><img class="responsive-img" src="{{ asset('img/logo.png') }}"></a>
                     <a href="#" data-activates="mobile-sideNav" class="button-collapse"><i class="material-icons">menu</i></a>
                     <ul class="right hide-on-med-and-down">
                         <li><a href="{{ path('map_view') }}" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Mapa de Semáforos"><i class="material-icons">map</i></a></li>
                         <li><a href="{{ path('semaforo_index') }}" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Semáforos Registrados"><i class="material-icons">traffic</i></a></li>
-                        <li><a href="#" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Calles más Transitadas"><i class="material-icons">format_list_bulleted</i></a></li>
+                        <li><a href="{{ path('calles_view') }}" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Calles más Transitadas"><i class="material-icons">format_list_bulleted</i></a></li>
                     </ul>
                 </div>
             </nav>
@@ -37,7 +37,7 @@
         <ul class="side-nav" id="mobile-sideNav">
             <li><a href="{{ path('map_view') }}"><i class="material-icons">map</i> Mapa de Semáforos</a></li>
             <li><a href="{{ path('semaforo_index') }}"><i class="material-icons">traffic</i> Semáforos Registrados</a></li>
-            <li><a href="#"><i class="material-icons">format_list_bulleted</i> Calles más Transitadas</a></li>
+            <li><a href="{{ path('calles_view') }}"><i class="material-icons">format_list_bulleted</i> Calles más Transitadas</a></li>
         </ul>
 
     </header>
