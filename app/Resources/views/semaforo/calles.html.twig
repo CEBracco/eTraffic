@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/tables.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset('lib/DataTables/js/jquery.dataTables.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/tables.js') }}"></script>
+{% endblock %}
+
+{% block body %}
+    <h1>Calles más transitadas</h1>
+
+    <div class="row">
+        <div id="admin" class="col s12">
+            <div class="material-table">
+                <table id="datatable">
+                    <thead>
+                        <tr>
+                            <th>Calle</th>
+                            <th>Promedio de autos</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for promedio in promedios %}
+                        <tr>
+                            <td>{{ promedio.callePrimaria }}</td>
+                            <td>{{ promedio.promedio }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}
