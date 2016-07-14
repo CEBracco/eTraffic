@@ -3,9 +3,9 @@ eTraffic
 
 Este es el sistema eTraffic principal que muestra la informacion que consume de los semaforos que estan en el simulator.
 
-El usuario y contraseña son los mismos que en el simulador:
-etraffic@localhost
-contraseña root
+El usuario y contraseÃ±a son los mismos que en el simulador:
+etraffic
+contraseÃ±a root
 
 Importar la base de datos etraffic.sql que se encuentra en la carpeta testDB
 
